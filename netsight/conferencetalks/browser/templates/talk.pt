@@ -1,0 +1,51 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+  <body>
+    
+    <metal:description fill-slot="content-description" />     
+
+    <metal:content-core fill-slot="content-core">
+      <metal:content-core define-macro="content-core">
+	<div id="talk-details">
+	  <div class="visualPadding">
+	    <h2>When & Where</h2>
+	    <p>
+	    <strong>Day:</strong> <span tal:replace="context/day|nothing" /><br />
+	    <strong>Time:</strong> <span tal:replace="view/time|nothing" /><br />
+	    <strong>Room:</strong> <span tal:replace="context/room|nothing" /><br />
+	    <strong>Audience:</strong> 
+	    <tal:keywords tal:repeat="kw view/keywords|nothing">
+	      <span tal:content="kw"
+		    tal:attributes="class python:'keyword keyword-%s' % (kw.lower().replace(' ',''))"
+		    /><tal:comma 
+			 tal:condition="not: repeat/kw/end"
+			 >,</tal:comma></tal:keywords>.
+	    </p>
+	  </div>
+	</div>
+      
+	<h2>What</h2>
+	<p tal:content="structure view/description"
+	   class="documentDescription">         
+	Description               
+	</p>
+	
+	<h2>Who</h2>
+	<h3 class="speakerName" tal:content="context/name"></h3>
+	  <p class="discreet talkCompany" tal:content="context/company"
+	     tal:condition="context/company|nothing">
+	  </p>
+	  <p tal:content="structure view/bio">
+            Bio text
+          </p>
+	
+      </metal:content-core>
+    </metal:content-core>
+
+  </body>
+</html>

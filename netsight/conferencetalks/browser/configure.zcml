@@ -1,0 +1,83 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   xmlns:browser="http://namespaces.zope.org/browser"
+   i18n_domain="netsight.ploneconf2010_theme"
+   xmlns:plone="http://namespaces.plone.org/plone">
+  
+  <browser:page
+     for="*"
+     name="import_from_gdocs"
+     class=".importer.importer"
+     permission="zope2.View"
+     />
+
+  <browser:page
+     for="*"
+     name="stats"
+     class=".talks.stats"
+     permission="zope2.View"
+     />
+
+  <browser:page
+     for="*"
+     name="talksvote"
+     class=".talks.talks"
+     template="templates/talks.pt"
+     permission="zope2.View"
+     />
+
+  <browser:page
+     for="*"
+     name="votedtalks"
+     class=".talks.talks"
+     template="templates/votedtalks.pt"
+     permission="cmf.ModifyPortalContent"
+     />
+
+  <browser:page
+     for="*"
+     name="schedule"
+     class=".talks.schedule"
+     template="templates/schedule.pt"
+     permission="zope2.View"
+     />
+
+  <browser:page
+     for="netsight.ploneconf2010_talks.talk.ITalk"
+     name="slot-view"
+     class=".talks.schedule"
+     template="templates/slot-view.pt"
+     permission="zope2.View"
+     />
+
+  <browser:page
+     for="*"
+     name="talk"
+     class=".talks.talk"
+     permission="zope2.View"
+     />
+
+  <browser:page
+     for="netsight.ploneconf2010_talks.talk.ITalk"
+     name="talk_view"
+     class=".talks.talkView"
+     template="templates/talk.pt"
+     permission="zope2.View"
+     />
+
+  <browser:page
+     for="*"
+     name="addvote"
+     class=".talks.addvote"
+     permission="zope2.View"
+     />
+
+  <browser:page
+     for="*"
+     name="schedule.ics"
+     class=".calendar.CalendarView"
+     permission="zope2.View"
+     />
+
+
+</configure>

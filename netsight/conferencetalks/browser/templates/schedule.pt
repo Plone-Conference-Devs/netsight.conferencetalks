@@ -1,0 +1,597 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+  <body>
+    
+    <metal:block 
+       fill-slot="top_slot"
+       tal:define="disable_column_one python:request.set('xdisable_plone.leftcolumn',1);
+                   disable_column_two python:request.set('disable_plone.rightcolumn',1);" />
+    
+    <metal:main fill-slot="main">
+
+
+<h1 class="documentFirstHeading">Talks</h1>
+
+<p><img alt="Plone Talk" class="image-inline" src="plone_talk.jpg" /></p>
+
+<p><em><a href="schedule.ics">An iCal feed of the talks schedule is available here</a></em></p>
+
+<p>Wednesday - Friday is the main conference period with two days of scheduled talks, followed by one day
+  of Open Space / Unconference day where talks will be proposed by the delgates on the day. Your 
+  delegate's pass will cover you for these 3 days. Lunch will be provided. There will be 
+  <a href="/the-party">a dinner / party</a> on the Thursday evening with a mini beer and pie festival.</p>
+
+    <div class="schedule">
+    <h2>Wednesday 27<sup>th</sup> October</h2>
+    <table>
+    <tbody><tr class="heading"> 
+      <th></th>
+      <th>Wessex Suite</th>
+      <th>Malborough Room</th>
+      <th>Dutchess 1+2</th>
+      <th>Dutchess 3+4</th>
+    </tr>
+
+<tr class="registration break">
+  <td class="time">8:30<!---9:00--></td>
+  <td colspan="4" style="text-align:center">
+<div class="talk">
+          <h3>Registration</h3>
+<!--
+	    <p class="discreet byline">
+            <span class="discreet">
+	      <span class="name">Alexander Limi</span> and <span class="name">Alan Runyan</span>, Co-founders of Plone <br /><em>Wessex Suite</em>
+            </span>
+          </p>
+-->          
+        </div>
+</td>
+
+
+<tr class="keynote">
+  <td class="time">9:00<!---10:00--></td>
+  <td colspan="4" style="text-align:center">
+<div class="talk">
+          <h3>Keynote: The Future of Plone</h3>
+	    <p class="discreet byline">
+            <span class="discreet">
+	      <span class="name">Alexander Limi</span> and <span class="name">Alan Runyan</span>, Co-founders of Plone <br /><em>Wessex Suite</em>
+            </span>
+          </p>
+          
+        </div>
+</td>
+</tr>
+
+<tr class="break"><td class="time">10:00<!---10:10--></td>
+  <td colspan="4"><span class="discreet">BREAK</span></td>
+</tr>
+
+    <tr><td class="time">10:10<!---10:55--></td>
+      <td>
+         
+            <div tal:content="structure context/deco-content-editing-in-plone-5/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/mad-about-mobile/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/enterprise-search-in-plone-using-solr/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/solving-social-network-fatigue-with-plone/@@slot-view"></div></td>
+    </tr>
+<tr class="break"><td class="time">10:55<!---11:25--></td>
+  <td colspan="4"><span class="discreet">COFFEE BREAK</span></td>
+</tr>
+    <tr><td class="time">11:25<!---12:10--></td>
+      <td>
+         
+            <div tal:content="structure context/high-performance-sites-made-easy/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/a-consultants-experience-of-plone/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/ldap-and-active-directory-authentication-in-plone/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/funnelweb-quickly-importing-existing-sites/@@slot-view"></div></td>
+    </tr>
+
+<tr class="break"><td class="time">12:10<!---12:20--></td>
+  <td colspan="4"><span class="discreet">BREAK</span></td>
+</tr>
+
+
+    <tr><td class="time">12:20<!---13:05--></td>
+      <td>
+         
+            <div tal:content="structure context/where-we-go-from-here/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/easier-and-faster-plone-theming-with-deliverance-and-xdv/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/loose-weight-now-ask-me-how/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/plone-at-the-university-of-washington/@@slot-view"></div></td>
+    </tr>
+
+<tr class="break"><td class="time">13:05<!---14:00--></td>
+  <td colspan="4"><span class="discreet">LUNCH</span></td>
+</tr>
+
+
+    <tr><td class="time">14:00<!---14:45--></td>
+      <td>
+         
+            <div tal:content="structure context/design-and-development-with-dexterity-and-convention-over-configuration/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/giving-light-to-dark-corners-of-z3c.form/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/continuous-integration-testing-using-hudson/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/ploneedu-from-concept-to-reality-in-six-months/@@slot-view"></div></td>
+    </tr>
+
+<tr class="break"><td class="time">14:45<!---14:55--></td>
+  <td colspan="4"><span class="discreet">BREAK</span></td>
+</tr>
+
+
+    <tr><td class="time">14:55<!---15:40--></td>
+      <td>
+         
+            <div tal:content="structure context/how-not-to-develop-plone-products/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/how-not-to-fail/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/laying-pipe-with-transmogrifier/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/untested-javascript-code-is-broken-code.-or-how-i-arrived-there/@@slot-view"></div></td>
+    </tr>
+
+<tr class="break"><td class="time">15:40<!---16:10--></td>
+  <td colspan="4"><span class="discreet">COFFEE BREAK</span></td>
+</tr>
+
+    <tr><td class="time">16:10<!---16:55--></td>
+      <td>
+         
+            <div tal:content="structure context/tools-and-techniques-for-a-successful-plone-project/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/multilingual-sites-cavets-and-tips/@@slot-view"></div></td>
+      <td>
+         
+            <!-- <div tal:content="structure context/top-5-things-the-plone-community-can-learn-from-zenoss/@@slot-view"></div>--></td>
+      <td>
+         
+            <div tal:content="structure context/fullmarks-for-plone/@@slot-view"></div></td>
+    </tr>
+
+<tr class="break"><td class="time">16:55</td>
+  <td colspan="4"><span class="discreet">BREAK</span></td>
+</tr>
+
+<tr class="keynote">
+  <td class="time">17:05<!---18:05--></td>
+  <td colspan="4" style="text-align:center">
+<div class="talk">
+          <h3>Guest Keynote: Challenging Business</h3>
+	    <p class="discreet byline">
+            <span class="discreet">
+	      <span class="name">Richard Noble</span>, Bloodhound SSC Project <br /><em>Wessex Suite</em>
+            </span>
+          </p>
+          
+        </div>
+</td>
+</tr>
+</tbody>
+</table>
+    </div>
+
+
+    <div class="schedule">
+    <h2>Thursday 28<sup>th</sup> October</h2>
+    <table>
+    <tbody><tr><td class="time"></td>
+      <th>Wessex Suite</th>
+      <th>Malborough Room</th>
+      <th>Dutchess 1+2</th>
+      <th>Dutchess 3+4</th>
+    </tr>
+    <tr><td class="time">9:00</td>
+      <td>
+         
+            <div tal:content="structure context/fixing-the-ungoogleable-managing-disasters-without-losing-your-cool/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/faceted-navigation-on-plone/@@slot-view"></div></td>
+      <td>
+
+            <div tal:content="structure context/from-copy-to-paster-a-middle-class-plone-developer-tale/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/pretacloud-the-shared-web-platform-for-government/@@slot-view"></div></td>
+    </tr>
+
+<tr class="break"><td class="time">09:45</td>
+  <td colspan="4"><span class="discreet">BREAK</span></td>
+</tr>
+
+    <tr><td class="time">09:55</td>
+      <td>
+         
+            <div tal:content="structure context/the-state-of-plone-caching/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/when-plone-is-overkill/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/brasil.gov.br-building-a-digital-nation-with-plone/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/pain-free-complex-ldap-scenarios/@@slot-view"></div></td>
+    </tr>
+
+<tr class="break"><td class="time">10:40</td>
+  <td colspan="4"><span class="discreet">COFFEE BREAK</span></td>
+</tr>
+
+
+    <tr><td class="time">11:10</td>
+      <td>
+         
+            <div tal:content="structure context/how-to-easily-build-plone-custom-applications-through-the-web-with-small-development-knowledge/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/scalable-and-high-availability-plone-hosting-with-amazon-ec2-for-rice-universitys-enterprise-rhaptos-open-education-platform/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/potential-plone-clients-how-to-seal-the-deal/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/plone-is-so-semantic-isnt-it/@@slot-view"></div></td>
+    </tr>
+
+<tr class="break"><td class="time">11:55</td>
+  <td colspan="4"><span class="discreet">BREAK</span></td>
+</tr>
+
+
+    <tr><td class="time">12:05</td>
+      <td>
+         
+            <div tal:content="structure context/theming-with-xdv/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/buildout-for-the-future/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/fine-tuning-plone-for-cultural-organizations/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/plone-alone/@@slot-view"></div></td>
+    </tr>
+
+<tr class="break"><td class="time">12:50</td>
+  <td colspan="4"><span class="discreet">LUNCH</span></td>
+</tr>
+
+
+    <tr><td class="time">14:00</td>
+      <td>
+         
+            <div tal:content="structure context/the-world-outside-plone/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/from-the-client-side-javascript-and-plone/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/collective.amberjack-chapter-one.-the-interactive-age/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/boosting-productivity-with-201cplone-driven-plone-development201d/@@slot-view"></div></td>
+    </tr>
+
+<tr class="break"><td class="time">14:45</td>
+  <td colspan="4"><span class="discreet">BREAK</span></td>
+</tr>
+
+
+    <tr><td class="time">14:55</td>
+      <td>
+         
+            <div tal:content="structure context/the-art-of-integrating-plone-with-webservices/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/plone-boutique-a-guide-to-automated-and-low-budget-plone-4-development-on-the-cloud/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/plone-theme-creation-simplified/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/plone-on-relstorage/@@slot-view"></div></td>
+    </tr>
+
+<tr class="break"><td class="time">15:40</td>
+  <td colspan="4"><span class="discreet">COFFEE BREAK</span></td>
+</tr>
+
+
+    <tr><td class="time">16:10</td>
+      <td>
+         
+            <div tal:content="structure context/future-is-bright-future-is-plone/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/connexions-and-enterprise-rhaptos-a-global-education-and-plone-success-story/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/oops-i-deployed-it-again/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/external-e-commerce-and-plone-playing-along/@@slot-view"></div></td>
+    </tr>
+
+<tr class="break"><td class="time">16:55</td>
+  <td colspan="4"><span class="discreet">BREAK</span></td>
+</tr>
+
+<tr class="keynote">
+  <td class="time">17:05</td>
+  <td colspan="4" style="text-align:center">
+<div class="talk">
+          <h3>Lightning Talks</h3>
+	    <p class="discreet byline">
+            <span class="discreet">
+	      <em>Wessex Suite</em>
+            </span>
+          </p>
+          
+        </div>
+</td>
+</tr>
+
+<tr class="keynote">
+  <td class="time">18:15</td>
+  <td colspan="4" style="text-align:center">
+<div class="talk">
+          <h3>Plone Foundation AGM</h3>
+	    <p class="discreet byline">
+            <span class="discreet">
+	      <em>Wessex Suite</em>
+            </span>
+          </p>
+          
+        </div>
+</td>
+</tr>
+
+<tr class="keynote break">
+  <td class="time">19:00</td>
+  <td colspan="4" style="text-align:center">
+<div class="talk">
+          <h3>Plone Conference Dinner / Party</h3>
+	    <p class="discreet byline">
+            <span class="discreet">
+	      <em>31 Corn Street</em>
+            </span>
+          </p>
+          
+        </div>
+</td>
+</tr>
+
+
+    </tbody></table>
+    </div>
+
+
+    <div class="schedule">
+    <h2>Friday 29<sup>th</sup> October</h2>
+    
+    <p>The Open Space day is a day in which the schedule starts completely empty, and then
+      delegates propose talks on the day. It is a great way to get talks based upon discussions
+      from earlier on in the week. More details will come shortly.</p>
+
+    <table>
+    <tbody><tr><td class="time"></td>
+      <th>Wessex Suite</th>
+      <th>Malborough Room</th>
+      <th>Dutchess 1+2</th>
+      <th>Dutchess 3+4</th>
+    </tr>
+    <tr><td class="time">9:00</td>
+      <td>
+         
+            <div tal:content="structure context/open-space/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/open-space/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/open-space/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/open-space/@@slot-view"></div></td>
+    </tr>
+
+<tr class="break"><td class="time">09:45</td>
+  <td colspan="4"><span class="discreet">BREAK</span></td>
+</tr>
+
+    <tr><td class="time">09:55</td>
+      <td>
+         
+            <div tal:content="structure context/open-space/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/open-space/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/open-space/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/open-space/@@slot-view"></div></td>
+    </tr>
+
+<tr class="break"><td class="time">10:40</td>
+  <td colspan="4"><span class="discreet">COFFEE BREAK</span></td>
+</tr>
+
+
+    <tr><td class="time">11:10</td>
+      <td>
+         
+            <div tal:content="structure context/open-space/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/open-space/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/open-space/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/open-space/@@slot-view"></div></td>
+    </tr>
+
+<tr class="break"><td class="time">11:55</td>
+  <td colspan="4"><span class="discreet">BREAK</span></td>
+</tr>
+
+
+    <tr><td class="time">12:05</td>
+      <td>
+         
+            <div tal:content="structure context/open-space/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/open-space/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/open-space/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/open-space/@@slot-view"></div></td>
+    </tr>
+
+<tr class="break"><td class="time">12:50</td>
+  <td colspan="4"><span class="discreet">LUNCH</span></td>
+</tr>
+
+
+    <tr><td class="time">14:00</td>
+      <td>
+         
+            <div tal:content="structure context/open-space/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/open-space/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/open-space/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/open-space/@@slot-view"></div></td>
+    </tr>
+
+<tr class="break"><td class="time">14:45</td>
+  <td colspan="4"><span class="discreet">BREAK</span></td>
+</tr>
+
+
+    <tr><td class="time">14:55</td>
+      <td>
+         
+            <div tal:content="structure context/open-space/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/open-space/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/open-space/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/open-space/@@slot-view"></div></td>
+    </tr>
+
+<tr class="break"><td class="time">15:40</td>
+  <td colspan="4"><span class="discreet">COFFEE BREAK</span></td>
+</tr>
+
+
+    <tr><td class="time">16:10</td>
+      <td>
+         
+            <div tal:content="structure context/open-space/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/open-space/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/open-space/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/open-space/@@slot-view"></div></td>
+    </tr>
+
+<tr class="break"><td class="time">16:55</td>
+  <td colspan="4"><span class="discreet">BREAK</span></td>
+</tr>
+
+
+    <tr><td class="time">17:05</td>
+      <td>
+         
+            <div tal:content="structure context/open-space/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/open-space/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/open-space/@@slot-view"></div></td>
+      <td>
+         
+            <div tal:content="structure context/open-space/@@slot-view"></div></td>
+    </tr>
+
+<tr class="keynote">
+  <td class="time">17:50</td>
+  <td colspan="4" style="text-align:center">
+<div class="talk">
+          <h3>Closing Plenery</h3>
+	    <p class="discreet byline">
+            <span class="discreet">
+	      <em>Wessex Suite</em>
+            </span>
+          </p>
+          
+        </div>
+</td>
+</tr>
+
+
+</tbody>
+</table>
+
+    
+    </metal:main>
+
+  </body>
+</html>

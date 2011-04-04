@@ -1,0 +1,33 @@
+        <div tal:define="talk nocall:context; talkview talk/@@talk" class="talk">
+          <h3 tal:condition="python:talk is not None">
+	    <a tal:attributes="href talk/absolute_url;
+			       title talk/title"
+	       tal:content="talk/title">
+	      talk title
+	    </a>
+	  </h3>
+<tal:block tal:condition="python:talk.title != 'Open Space'">
+	  <p class="discreet byline">
+	    <span class="discreet">
+            <span class="name" tal:content="talk/name |nothing" />,
+	    <tal:block tal:condition="talk/company | nothing">
+              <span tal:replace="talk/company | nothing" />,
+            </tal:block>
+            <span tal:replace="talk/country | nothing" />
+            </span>
+          </p>
+
+         <ul class="keywords">
+	 <tal:block tal:repeat="keyword talkview/keywords">
+         <li>
+	   <a href="#" 
+	      tal:define="kw python:keyword.lower().replace(' ','');"
+	      tal:attributes="class python:'keyword keyword-'+kw;
+			      rel kw"
+              tal:content="keyword"
+	      title="Filter on this topic">keyword</a><span tal:omit-tag="" tal:condition="not:repeat/keyword/end"><br/></span>
+         </li>
+	 </tal:block>
+         </ul>
+</tal:block>
+        </div>

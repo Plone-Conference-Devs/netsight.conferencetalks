@@ -1,0 +1,4 @@
+<object name="portal_types">
+ <object name="netsight.ploneconf2010_talks.speaker" meta_type="Dexterity FTI" />
+ <object name="netsight.ploneconf2010_talks.talk" meta_type="Dexterity FTI" />
+</object>
