@@ -2,12 +2,12 @@
 <object name="portal_skins" allow_any="False" cookie_persistence="False"
 	default="">
   
-  <object name="netsight_ploneconf2010_talks_images"
+  <object name="netsight_conferencetalks_images"
 	  meta_type="Filesystem Directory View"
-	  directory="netsight.ploneconf2010_talks:skins/netsight_ploneconf2010_talks_images"/>
+	  directory="netsight.conferencetalks:skins/netsight_conferencetalks_images"/>
   
   <skin-path name="Plone Conf 2010 Talks" based-on="">
-   <layer name="netsight_ploneconf2010_talks_images"
+   <layer name="netsight_conferencetalks_images"
 	   insert-after="custom"/>
   </skin-path>
   

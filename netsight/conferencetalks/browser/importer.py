@@ -33,7 +33,7 @@ class importer(BrowserView):
             talks = self.context
 
 
-            talk = createContentInContainer(talks, 'netsight.ploneconf2010_talks.talk',
+            talk = createContentInContainer(talks, 'netsight.conferencetalks.talk',
                                             checkConstraints=False,
                                             title=title,
                                             description=description,

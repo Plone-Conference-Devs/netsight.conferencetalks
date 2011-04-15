@@ -6,7 +6,7 @@ from plone.directives import form, dexterity
 from plone.app.textfield import RichText
 from plone.namedfile.field import NamedImage
 
-from netsight.ploneconf2010_talks import _
+from netsight.conferencetalks import _
 
 class ISpeaker(form.Schema):
     """A conference presenter.

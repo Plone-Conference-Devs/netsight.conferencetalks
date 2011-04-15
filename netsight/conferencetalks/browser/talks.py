@@ -6,7 +6,7 @@ import datetime
 from random import shuffle
 from hashlib import md5
 
-from netsight.ploneconf2010_talks.talk import calcTime
+from netsight.conferencetalks.talk import calcTime
 
 
 class talks(BrowserView):

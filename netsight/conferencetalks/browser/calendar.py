@@ -10,7 +10,7 @@ from Products.ATContentTypes.lib.calendarsupport import CalendarSupportMixin
 
 from DateTime import DateTime
 
-from netsight.ploneconf2010_talks.talk import calcTime
+from netsight.conferencetalks.talk import calcTime
 
 class ICal(CalendarSupportMixin):
 
@@ -62,7 +62,7 @@ class CalendarView(BrowserView):
         context = self.context
         catalog = getToolByName(context, 'portal_catalog')
         path = '/'.join(context.getPhysicalPath())
-        provides = 'netsight.ploneconf2010_talks.talk.ITalk'
+        provides = 'netsight.conferencetalks.talk.ITalk'
         self.events = catalog(path=path, object_provides=provides)
 
     def render(self):

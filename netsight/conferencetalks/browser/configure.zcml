@@ -43,7 +43,7 @@
      />
 
   <browser:page
-     for="netsight.ploneconf2010_talks.talk.ITalk"
+     for="netsight.conferencetalks.talk.ITalk"
      name="slot-view"
      class=".talks.schedule"
      template="templates/slot-view.pt"
@@ -58,7 +58,7 @@
      />
 
   <browser:page
-     for="netsight.ploneconf2010_talks.talk.ITalk"
+     for="netsight.conferencetalks.talk.ITalk"
      name="talk_view"
      class=".talks.talkView"
      template="templates/talk.pt"

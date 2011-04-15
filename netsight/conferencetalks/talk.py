@@ -10,7 +10,7 @@ from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 
 from z3c.form.browser.checkbox import CheckBoxFieldWidget
 
-from netsight.ploneconf2010_talks import _
+from netsight.conferencetalks import _
 
 kwvocab = SimpleVocabulary.fromValues(('Tutorial',
                                        'New to Plone',
