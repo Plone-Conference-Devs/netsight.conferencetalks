@@ -4,6 +4,11 @@
    i18n_domain="netsight.ploneconf2010_theme"
    xmlns:plone="http://namespaces.plone.org/plone">
   
+  <browser:resourceDirectory
+    name="netsight.conferencetalks"
+    directory="resources"
+    />
+  
   <browser:page
      for="*"
      name="import_from_gdocs"

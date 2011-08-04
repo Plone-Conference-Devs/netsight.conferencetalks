@@ -4,7 +4,6 @@
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     i18n_domain="example.conference">
 
-    <include file="skins.zcml" />
     <include package=".browser" />
 
     <!-- Include configuration for dependencies listed in setup.py -->
