@@ -9,7 +9,7 @@ class importer(BrowserView):
     def __call__(self):
 
         gd_client = gdata.spreadsheet.service.SpreadsheetsService()
-        gd_client.email = 'matth@netsight.co.uk'
+        gd_client.email = 'ploneconf@gmail.com'
         gd_client.password = 'secret'
         gd_client.source = 'myscript'
         gd_client.ProgrammaticLogin()

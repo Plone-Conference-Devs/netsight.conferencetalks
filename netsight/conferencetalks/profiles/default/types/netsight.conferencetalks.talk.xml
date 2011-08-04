@@ -4,7 +4,7 @@
  
  <!-- Basic metadata -->
  <property name="title" i18n:translate="">Talk</property>
- <property name="description" i18n:translate="">A person presenting sessions</property>
+ <property name="description" i18n:translate="">A talk at a conference</property>
  <property name="content_icon">Talk.gif</property>
  <property name="allow_discussion">False</property>
  <property name="global_allow">True</property>

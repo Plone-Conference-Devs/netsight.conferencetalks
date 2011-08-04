@@ -16,8 +16,8 @@
     <!-- Register an extension profile to make the product installable -->
     <genericsetup:registerProfile
         name="default"
-        title="Plone Conf 2010 Talks"
-        description="Talks management for Ploneconf 2010"
+        title="Conference Talks"
+        description="Manage Talks for a Conference"
         directory="profiles/default"
         provides="Products.GenericSetup.interfaces.EXTENSION"
         />
