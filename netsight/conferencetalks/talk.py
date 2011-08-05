@@ -12,29 +12,43 @@ from z3c.form.browser.checkbox import CheckBoxFieldWidget
 
 from netsight.conferencetalks import _
 
-kwvocab = SimpleVocabulary.fromValues(('Tutorial',
-                                       'New to Plone',
-                                       'Developers',
-                                       'Integrators',
-                                       'Designers',
-                                       'Enterprise',
-                                       'Education',
-                                       'Small Business',
-                                       'Healthcare',
-                                       'Government',
-                                       'Case Study',
+kwvocab = SimpleVocabulary.fromValues((u'Tutorial',
+                                       u'New to Plone',
+                                       u'Developers',
+                                       u'Integrators',
+                                       u'Designers',
+                                       u'Enterprise',
+                                       u'Education',
+                                       u'Small Business',
+                                       u'Healthcare',
+                                       u'Government',
+                                       u'Case Study',
+                                       u'Related Technologies',
                                        ))
 
+# room code names. Easier than numbers. cali microbrews
 roomvocab = SimpleVocabulary.fromValues(('',
-                                         'Wessex Suite',
-                                         'Malborough Room',
-                                         'Dutchess 1+2',
-                                         'Dutchess 3+4',
+                                         u'Stone',
+                                         u'Pyramid',
+                                         u'Anchor',
+                                         u'Green Flash',
+                                         u'AleSmith',
+                                         u'Biersch',
+                                         u'Strauss',
+                                         u'Ballast',
+                                         u'Firestone',
                                          ))
 
-dayvocab = SimpleVocabulary.fromValues(('',
-                                        'Wednesday',
-                                        'Thursday'))
+dayvocab = SimpleVocabulary.fromValues((u'',
+                                        u'Wednesday',
+                                        u'Thursday',
+                                        u'Friday',
+                                        u'Saturday',
+                                        u'Sunday'))
+                                        
+talklengthvocab = SimpleVocabulary.fromValues(("I'm not sure - squeeze me in where it makes sense",
+                                                '30 minutes',
+                                                '45 minutes'))
 
 
 times_wed = {0: ('2010/10/27 09:00', '2010/10/27 10:00'),
@@ -63,6 +77,10 @@ def calcTime(talk):
 
     day = talk.day
     slot = talk.slot
+    if not (slot and day):
+        return None
+        
+    # what does this do...?
     if day == 'Wednesday':
         return times_wed[slot]
     elif day == 'Thursday':
@@ -92,6 +110,17 @@ class ITalk(form.Schema):
     detail = schema.Text(
         title=_(u"Detail of the talk"),
         )
+        
+    talklength = schema.Choice(
+        title=_(u"Talk Length"),
+        vocabulary=talklengthvocab,
+        required=False,
+    )
+    
+    audience = schema.Text(
+            title=_(u"Who is the target audience for this talk?"),
+            description=_(u"Please be detailed so we can put you in the right room."),
+        )
     
     name = schema.TextLine(
         title=_(u"Name"),
@@ -109,6 +138,7 @@ class ITalk(form.Schema):
 
     country = schema.TextLine(
         title=_(u"Country"),
+        required=False,
         )
 
     bio = schema.Text(
@@ -131,6 +161,7 @@ class ITalk(form.Schema):
     keywords = schema.List(
         title=_(u"Keywords"),
         value_type=schema.Choice(title=u"keywords", vocabulary=kwvocab),
+        required=False,
         )
 
     dexterity.read_permission(votes='cmf.ReviewPortalContent')
@@ -140,17 +171,22 @@ class ITalk(form.Schema):
         required=False,
         )
 
+
+    
     day = schema.Choice(
         title=_(u"Day"),
         vocabulary=dayvocab,
+        required=False,
         )
 
     room = schema.Choice(
         title=_(u"Room"),
         vocabulary=roomvocab,
+        required=False,
         )
 
     slot = schema.Int(
         title=_(u"Slot"),
+        required=False,
         )
 

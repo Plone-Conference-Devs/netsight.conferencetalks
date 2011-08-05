@@ -14,21 +14,19 @@
     
     <metal:main fill-slot="main">
 
-      <h1 class="documentFirstHeading">Vote on the Plone Conference Talks</h1>
-      <p>This year we have decided to open up the talk selection process to the wider community.
-	Below is the list of proposed talks for the conference. Alas, we don't quite have enough
-	room in the schedule to fit all of them, so we need your help in deciding which talks
-	will be accepted. It will also help us schedule to talks to try and reduce the number of
-        conflicts between very popular sessions.</p>
-      <p>Please register your vote against the talks you wish to see at the conference. You
-	can vote on as many talks as you wish. The order presented here is random. You can click
-	on the talks type (eg. 'New to Plone') to just view talks of that type, and you can click
-        on the name of the speaker to see their biography.</p>
+      <h1 class="documentFirstHeading">Conference Talks: Community Vote</h1>
+      <p class="talks-intro">This year we have opened up the talk selection process to the wider community.
+	Below is the list of proposed talks for the conference. We need your help in deciding which talks
+	should be accepted. This also help us schedule talks in the proper size room and with as few 
+	conflicts as possible.</p>
+      <p class="talks-intro">Please click the checkbox next to the talks you would go see at the conference. You
+	can vote on as many talks as you wish, but please be honest so we can try to avoid schedule conflicts. 
+	   The order presented here is random. Click on the name of the speaker to see their biography.</p>
 
-      <p><em>The deadline for voting on the talks is Friday, 17th September. Speakers will be notified by Monday, 21st September.</em></p>
+      <p class="talks-intro"><em>The deadline for voting on the talks is Friday, 12th August. Speakers will be notified shortly thereafter.</em></p>
 
       <div class="filter" tal:condition="request/keyword|nothing">
-	<span>Talk filter: <span tal:omit-tag="" tal:content="request/keyword"></span>
+	   <span>Talk filter: <span tal:omit-tag="" tal:content="request/keyword"></span>
         <a tal:attributes="href request/URL0">View all talks</a></span>
       </div>
 
@@ -36,63 +34,78 @@
       <a tal:attributes="name talk/getId"></a>
       <tal:block tal:define="talkview talk/@@talk">
 
-       <h3 tal:content="talk/title">talk title</h3>
-       <div class="byline"><p class="discreet">
-
-         <p><span class="discreet"><a href="#" tal:attributes="onclick string:$('#bio-${talkview/getCSSId}').show();; return false;;">
-         <span tal:replace="talk/name"/>, 
-	 <tal:block tal:condition="talk/company">
-         <span tal:replace="talk/company"/>,
-         </tal:block>
-         <span tal:replace="talk/country"/>
-          </a></span></p>
-
-
-       <div class="bio" tal:attributes="id string:bio-${talkview/getCSSId}">
-           <p tal:content="structure talkview/bio">Speaker Bio</p>
+       <div class="talk-vote" tal:attributes="id string:vote-${talkview/getCSSId}">
+           <tal:block tal:condition="not:talkview/selected">
+             <a href="#" tal:attributes="onclick string:$.ajax({ type: 'POST', url: '${talk/absolute_url}/@@addvote', data: '', dataType: 'html', success: function(html){ $('#vote-${talkview/getCSSId}').html('<div><img src=\'/++resource++netsight.conferencetalks/images/full-check.png\' width=\'60\' alt=\'Solid!\' /></div>')}});; return false;">
+             <img src="/++resource++netsight.conferencetalks/images/no-check.png" 
+                  width="60" 
+                  title="Click to vote for this talk"
+                  tal:attributes="alt string:Vote for this talk: ${talk/title}" />
+             </a>
+           </tal:block>
+           <tal:block tal:condition="talkview/selected">
+              <img src="/++resource++netsight.conferencetalks/images/full-check.png" width="60" 
+                    alt="This is definitely interesting" />
+           </tal:block>
+    
+    
+            <div tal:condition="not:context/@@plone_portal_state/anonymous">
+                Score:&nbsp;<span tal:content="talkview/score" />
+            </div>
        </div>
 
 
+       <div class="talk-detail-wrapper">
+       <h3 tal:content="talk/title">talk title</h3>
+       <div class="byline">
+        <p class="discreet">
+
+         <span class="discreet">
+             <a href="#" tal:attributes="onclick string:$('#bio-${talkview/getCSSId}').toggle();; return false;;">
+                 <span tal:replace="talk/name"/> 
+        	     <tal:block tal:condition="talk/company">
+                    , <span tal:replace="talk/company"/>
+                 </tal:block>
+                 <tal:block tal:condition="talk/company">
+                    , <span tal:replace="talk/country"/>
+                 </tal:block>
+              </a>
+          </span>
+         </p>
+
+
+         <div class="bio" tal:attributes="id string:bio-${talkview/getCSSId}" style="display:none;">
+           <p tal:content="structure talkview/bio">Speaker Bio</p>
+         </div>
+
+
          <p class="discreet">
-	 <tal:block tal:repeat="keyword talkview/keywords">
-	   <a tal:attributes="href string:${request/URL0}?keyword=${keyword}"
-              tal:content="keyword">keyword</a><span tal:omit-tag="" tal:condition="not:repeat/keyword/end">,</span>
-	 </tal:block>
+        	 <tal:block tal:repeat="keyword talkview/keywords">
+        	   <a tal:attributes="href string:${request/URL0}?keyword=${keyword}"
+                      tal:content="keyword">keyword</a><span tal:omit-tag="" 
+                      tal:condition="not:repeat/keyword/end">,</span>
+        	 </tal:block>
          </p>
 
 
        </div>
-       <div class="vote" tal:attributes="id string:vote-${talkview/getCSSId}">
-       <tal:block tal:condition="not:talkview/selected">
-         <a href="#" tal:attributes="onclick string:$.ajax({ type: 'POST', url: '${talk/absolute_url}/@@addvote', data: '', dataType: 'html', success: function(html){ $('#vote-${talkview/getCSSId}').html('<div><img src=\'/++resource++netsight.ploneconf2010_theme.images/star.png\' height=\'80\' width=\'60\' alt=\'thanks\' /></div>')}});; return false;">
-         <img src="/++resource++netsight.ploneconf2010_theme.images/thumbs-up.png" 
-              height="80" width="60" 
-              tal:attributes="alt string:Vote for this talk: ${talk/title}" />
-         </a>
-       </tal:block>
-       <tal:block tal:condition="talkview/selected">
-          <img src="/++resource++netsight.ploneconf2010_theme.images/star.png" height="80" width="60" alt="thanks" />
-       </tal:block>
-         <br />
-
-<span tal:condition="not:context/@@plone_portal_state/anonymous"
-      tal:content="talkview/score" />
-
-       </div>
-       <div class="synopsis">
-           <p tal:content="structure talkview/description">Talk description</p>
+              
+       
+       <div class="talk-description">
+           <div class="synopsis">
+               <p tal:content="structure talkview/description">Talk description</p>
+           </div>
+    
+           <div class="control" tal:attributes="id string:control-${talkview/getCSSId}">
+              <span class="discreet"><a href="#" tal:attributes="onclick string:$('#detail-${talkview/getCSSId}').toggle();; return false;;">Details...</a></span>
+           </div>
+           <div class="detail" tal:attributes="id string:detail-${talkview/getCSSId}" style="display:none;">
+               <p tal:content="structure talkview/detail">Talk detail</p>
+               <p class="audience">Audience: <span tal:content="talk/audience"/></p>
+           </div>
        </div>
 
-       <div style="clear:both"></div>
-
-       <div class="control" tal:attributes="id string:control-${talkview/getCSSId}">
-          <span class="discreet"><a href="#" tal:attributes="onclick string:$('#detail-${talkview/getCSSId}').show();; $('#control-${talkview/getCSSId}').hide();; return false;;">View speakers submission notes</a></span>
-       </div>
-       <div class="detail" tal:attributes="id string:detail-${talkview/getCSSId}">
-           <p tal:content="structure talkview/detail">Talk detail</p>
-       </div>
-
-
+      </div>
       </tal:block>       
       </div>
 

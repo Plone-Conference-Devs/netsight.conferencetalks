@@ -1,0 +1,25 @@
+.talk h3{
+    clear: both;
+    margin-top: 10px;
+}
+
+.talk .byline{
+    margin-bottom: 5px;
+}
+
+.talk-vote{
+    float: left;
+    width: 20px;
+    margin-top: 10px;
+}
+
+.talk-detail-wrapper{
+    margin-left: 80px;
+    display: inline-block;
+    width: 80%;
+    
+}
+
+.talk .audience{
+    margin-top: 10px;
+}
